@@ -1,0 +1,93 @@
+<b>
+<div *ngIf="user" class="user-container" [ngClass]="{'user-container-edit': edit}" [hidden]="userDetails || (user.username === 'usernull')">
+
+  <div id="col-1">
+      Login: {{user.username}}
+      <br />
+      Email: {{user.email}}
+      <br />
+      Imię: {{user.name}}
+      <br />
+      Nazwisko: {{user.surname}}
+      <br />
+  </div>
+
+  <div id="col-2" [hidden]="isAdmin">
+      <div>
+          <label>Aktywowany: </label> <span *ngIf='user.enabled'> Tak</span><span *ngIf='!user.enabled'> Nie</span>
+      </div>
+      <button class="button is-small btn-primary" *ngIf='user.banned' (click)='banUser()' [hidden]="isAdmin">Odblokuj</button>
+      <button class="button is-small btn-primary" *ngIf='!user.banned' (click)='banUser()' [hidden]="isAdmin">Zablokuj</button>
+      <div>
+        <label id="region">Region: </label> {{user.region}} <br />
+        <label id="constituency">Okręg: </label> {{user.constituency}}
+      </div>
+  </div>
+
+  <div id="col-3">
+      <button class="btn btn-success" (click)='editUser()'>Edytuj użytkownika</button>
+      <br /><br />
+      <button class="btn btn-danger" (click)='deleteUser(this.user)' [disabled]="!checked" [hidden]="isAdmin">Usuń użytkownika</button><br />
+      <mat-checkbox [(ngModel)]="checked" [hidden]="isAdmin">Usuń!</mat-checkbox>
+  </div>
+
+  <div [hidden]="this.hiddenForm" class="editForm">
+    <br /><br /><br /><br /><br /><br />
+
+    <div id="editForm1">
+      <form>
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" class="form-control input-edit" id="login" [(ngModel)]="updateUser.username" name="login" placeholder="Login" value="{{user.username}}" minlength="4" maxlength="16">
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" class="form-control input-edit" id="email" [(ngModel)]="updateUser.email" name="email" placeholder="Email" value="{{user.email}}">
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" class="form-control input-edit" id="name" [(ngModel)]="updateUser.name" name="name" placeholder="Imię"  minlength="3" maxlength="20" value="{{user.name}}">
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" class="form-control input-edit" id="surname" [(ngModel)]="updateUser.surname" name="surname" placeholder="Nazwisko"  minlength="2" maxlength="30" value="{{user.surname}}">
+        </mat-form-field>
+        <br /><br /><br />
+        <button type="button" class="btn btn-success buttonUpdate" (click)="updateUserMethod()">Aktualizuj</button>
+      </form>
+    </div>
+
+    <div id="editForm2" [hidden]="isAdmin">
+      <br />
+      <b><h5>Struktury i stanowiska:</h5></b>
+      <mat-checkbox [(ngModel)]="updateUser.partyPresident">Prezes Partii</mat-checkbox><br />
+      <mat-checkbox [(ngModel)]="updateUser.nationalBoard">Zarząd Krajowy</mat-checkbox><br />
+      <mat-checkbox [(ngModel)]="updateUser.nationalCouncil">Rada Krajowa</mat-checkbox><br />
+      <mat-checkbox [(ngModel)]="updateUser.partyCourt">Sąd Partyjny</mat-checkbox><br />
+      <br />
+
+      <mat-form-field>
+      <mat-label>Region</mat-label>
+        <mat-select [(ngModel)]="updateUser.region" name="newRegion">
+          <mat-option *ngFor="let region of regions | async" [value]="region.name">
+            {{region.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field >
+        <mat-label>Okręg</mat-label>
+        <mat-select [(ngModel)]="updateUser.constituency" name="constituency" >
+          <ng-container *ngFor="let constituency of allConstituencies | async">
+            <mat-option *ngIf="constituency.parent === updateUser.region" [value]="constituency.name" >
+              {{constituency.name}}
+            </mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
+
+</div>
+<br />
+</b>

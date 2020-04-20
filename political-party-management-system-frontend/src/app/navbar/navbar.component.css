@@ -1,0 +1,51 @@
+.menu {
+  align-self: center;
+  width: 80%;
+  border-radius: 10px;
+  margin-left:  10%;
+  background-color: darkgray;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0.97;
+  height: 65px;
+}
+
+a {
+  color: black;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: center;
+}
+
+a:hover {
+  font-weight: bold;
+  background: ghostwhite;
+  border-radius: 10px;
+  opacity: 0.95;
+ }
+
+ span {
+   font-size: larger;
+ }
+
+ #set1 {
+   width: 60%;
+   justify-content: left;
+ }
+
+ #set2 {
+  width: 40%;
+  justify-content: right;
+  padding-right: 1%;
+}
+
+.personalData {
+  color: black;
+  padding-top: 5px;
+  float: right;
+  padding-left: 9px;
+}
+
+h5 {
+  color: black;
+}

@@ -1,0 +1,17 @@
+
+<div *ngIf="message" id="message" [hidden]="this.hiddenDiv">
+    <div class="text-center">
+      <h3>{{message.title}}</h3>
+    </div>
+    <div>
+      <p><b><div [innerHTML]="message.content"></div></b></p>
+    </div>
+    <div class="text-right">
+      <i><b>{{message.principal.name}} {{message.principal.surname}}</b></i>
+    </div>
+    <div class="text-center">
+      <button class="button btn btn-danger" (click)="removeMessage()">Usuń wiadomość</button>
+    </div>
+    <br />
+  </div>
+  <br />

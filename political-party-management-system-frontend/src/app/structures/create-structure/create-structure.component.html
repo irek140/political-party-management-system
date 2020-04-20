@@ -1,0 +1,16 @@
+<div id="container" style="display:inline-grid;">
+  <div class="text-center">
+    <h1 >Edytor struktur <img src="../../assets/icons/structures.svg" height="40px" ></h1>
+    <form class="form" #structureForm='ngForm'>
+        <h4>Nowy region</h4>
+        <input type="text" class="form-control" id="region" required [(ngModel)]="region" name="region">
+        <br />
+      <button class="btn btn-success" (click)="createRegion()" [disabled]="!structureForm.valid">Utwórz</button>
+    </form>
+  </div>
+  <br /><br />
+  <div *ngFor="let region of regions | async" >
+    <app-region-details [region]='region'></app-region-details>
+    <br />
+  </div>
+</div>

@@ -1,0 +1,70 @@
+
+<div *ngIf="survey3" id="survey3" [hidden]="hidden">
+  <div class="text-center ">
+    <h4>{{survey3.question}}</h4>
+  </div>
+
+  <table id="options">
+    <tr>
+      <td id="option1" class="text-center">
+        <b>
+          <h5>Odpowiedź 1:</h5> {{survey3.answer1}}
+          <br />
+          <h6>Oddanych głosów: {{survey3.value1}}</h6>
+        </b>
+      </td>
+
+      <td id="option2" class="text-center">
+        <b>
+          <h5>Odpowiedź 2:</h5> {{survey3.answer2}}
+          <br />
+          <h6>Oddanych głosów: {{survey3.value2}}</h6>
+        </b>
+      </td>
+
+      <td id="option3" class="text-center">
+        <b>
+          <h5>Odpowiedź 3:</h5> {{survey3.answer3}}
+          <br />
+          <h6>Oddanych głosów: {{survey3.value3}}</h6>
+        </b>
+      </td>
+    </tr>
+  </table>
+
+  <div class="chart" *ngIf="numberOfVotes > 0">
+    <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="surveyObject"
+    [gradient]="gradient"
+    [legend]="showLegend"
+    [legendPosition]="legendPosition"
+    [labels]="showLabels"
+    [doughnut]="isDoughnut"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+    </ngx-charts-pie-chart>
+  </div>
+  <br />
+
+  <div class="text-center" id="author" >
+    <i *ngIf="survey3.owner"><b>
+      <span *ngIf="survey3.owner.username !== 'admin'">Autor: {{survey3.owner.name}} {{survey3.owner.surname}}</span>
+      &nbsp; &nbsp; &nbsp;  &nbsp; Utworzono: {{survey3.created}}
+    </b></i>
+  </div>
+  <br />
+  <div id="buttons">
+    <div id="buttonRemove">
+      <button class="btn btn-danger buttonR" *ngIf='survey3.owner.id === this.id' (click)="deleteSurvey()">Usuń</button>
+    </div>
+    <div id="buttonGenerate">
+      <button class="btn btn-primary buttonG"  (click)="print()" *ngIf='survey3.owner.id === this.id'>Utwórz raport PDF</button>
+    </div>
+    <br /><br /><br />
+  </div>
+</div>
+<br />

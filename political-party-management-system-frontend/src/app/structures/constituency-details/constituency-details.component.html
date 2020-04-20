@@ -1,0 +1,24 @@
+
+<b>
+<div *ngIf="con" id="con" [hidden]="this.hiddenDiv">
+<h4 class="text-center">{{con.name}} - {{con.parent}} </h4>
+  <div>
+    <h6>Edytuj okręg</h6>
+    <mat-form-field class="example-full-width" id="constituencyNameEdit">
+      <input matInput type="text" class="form-control input-edit" id="name" [(ngModel)]="updateConstituency.name" name="namee" placeholder="Nazwa" value="Nazwa">
+    </mat-form-field>
+
+    <mat-form-field id="regionEdit">
+      <mat-label>Region</mat-label>
+        <mat-select [(ngModel)]="newRegion" name="newRegion">
+          <mat-option *ngFor="let region of regions | async" [value]="region.name">
+            {{region.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <button class="button btn btn-primary" (click)="updateConstituencyMethod()">Aktualizuj okręg</button>
+  <button class="button btn btn-danger" (click)="removeConstituency()">Usuń okręg</button>
+</div>
+<br />
+</b>

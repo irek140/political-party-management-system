@@ -1,0 +1,31 @@
+<div id="container">
+  <h1 class="text-center">Wyniki sondaży i głosowań <img src="../../assets/icons/survey-result.svg" height="40px" ></h1>
+  <br />
+
+  <!-- Wylistowania poszczególnych rodzajów ankiet -->
+  <div *ngFor="let survey2 of surveys2 | async" class="survey">
+    <app-surveys2-results-details [survey2]='survey2'></app-surveys2-results-details>
+  </div>
+
+  <div *ngFor="let survey3 of surveys3 | async" class="survey">
+    <app-surveys3-results-details [survey3]='survey3'></app-surveys3-results-details>
+  </div>
+
+  <div *ngFor="let survey4 of surveys4 | async" class="survey">
+    <app-surveys4-results-details [survey4]='survey4'></app-surveys4-results-details>
+  </div>
+
+  <div *ngFor="let survey5 of surveys5 | async" class="survey">
+    <app-surveys5-results-details [survey5]='survey5'></app-surveys5-results-details>
+  </div>
+
+  <div *ngFor="let survey6 of surveys6 | async" class="survey">
+    <app-surveys6-results-details [survey6]='survey6'></app-surveys6-results-details>
+  </div>
+
+  <div *ngFor="let survey7 of surveys7 | async" class="survey">
+    <app-surveys7-results-details [survey7]='survey7'></app-surveys7-results-details>
+  </div>
+
+  <br />
+</div>

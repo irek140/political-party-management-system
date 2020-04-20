@@ -1,0 +1,53 @@
+
+#all {
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  margin-left:  10%;
+}
+
+p {
+  color: black;
+  opacity: 1;
+}
+
+h3 {
+  color: black;
+}
+
+#loginForm {
+  float: left;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+  padding-top: 25px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 25%;
+  padding-bottom: 20px;
+  color: black;
+}
+
+#articleList {
+  float: left;
+  width: 70%;
+  margin-right: 5%;
+}
+
+label {
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+}
+
+.statement {
+  color: yellow;
+  padding-top: 10px;
+}
+
+input {
+  color: black;
+}
+
+.loginButton {
+  margin-top: 10px;
+}

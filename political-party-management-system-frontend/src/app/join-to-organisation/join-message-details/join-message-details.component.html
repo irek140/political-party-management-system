@@ -1,0 +1,20 @@
+
+<div *ngIf="joinMessage" id="joinMessage" [hidden]="this.hiddenDiv">
+  <div>
+    <p><b>{{joinMessage.content}}</b></p>
+  </div>
+  <div class="text-right">
+    <i *ngIf="joinMessage.author"><b>{{joinMessage.author.name}} {{joinMessage.author.surname}}</b></i>
+  </div>
+  <br />
+  <div>
+    <div class="buttonRemove">
+      <button (click)="remove()" class="btn btn-danger">Usuń prośbę</button>
+    </div>
+    <div class="buttonAccept">
+      <button (click)="accept()" class="btn btn-success">Akceptuj prośbę</button>
+    </div>
+    <br /><br />
+  </div>
+</div>
+<br />

@@ -1,0 +1,14 @@
+
+<div id="joinMessagesList">
+  <h1 class="text-center">Prośby o członkostwo <img src="../../assets/icons/new-member.svg" height="40px" ></h1>
+  <br />
+  <h3 class="text-center" *ngIf="(joinMessages | async)?.length==0">Nie znaleziono rekordów</h3>
+  <h3 class="text-center" *ngIf="joinMessages | async; let list">Do rozpatrzenia: {{list.length}}</h3>
+  <div *ngFor="let joinMessage of joinMessages | async" >
+    <app-join-message-details [joinMessage]='joinMessage'></app-join-message-details>
+    <br />
+  </div>
+  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br />
+</div>
+<br />

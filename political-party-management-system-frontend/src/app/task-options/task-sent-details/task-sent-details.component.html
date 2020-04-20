@@ -1,0 +1,39 @@
+
+<div *ngIf="task" id="task" [hidden]="this.hiddenDiv">
+  <div class="text-center">
+    <h3>{{task.taskTitle}}</h3>
+  </div>
+    <div>
+      <div [innerHTML]="task.taskContent">
+    </div>
+  <div class="text-left">
+    <i>
+      <b>Status: {{status}}</b>
+    </i>
+    <br />
+  </div>
+  <br />
+  <div>
+    <b>
+      Realizujący: {{task.recipient.surname}} {{task.recipient.name}} &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; Data rozpoczęcia: {{task.startdate}} &nbsp;&nbsp;&nbsp; Data zakończenia: {{task.enddate}}
+    </b>
+    <br /><br />
+
+    <div *ngIf="task.report !== null && task.report.length > 0" class="text-center">
+      <h4>Raport z zadania</h4>
+      <div [innerHTML]="task.report"></div>
+    </div>
+    <br />
+    <ul><b>Pełna lista zleceniobiorców:</b>
+      <li *ngFor="let user of addressessList">
+        <b>{{user.surname}} &nbsp;|&nbsp; {{user.name}} &nbsp;|&nbsp; {{user.username}}</b>
+      </li>
+    </ul>
+  <br />
+  <div class="text-center">
+    <button class="button btn btn-danger" (click)="deleteTask()" >Usuń zadanie</button>
+    <button class="button btn btn-warning" (click)="correctTask()" [disabled]="!this.done">Do ponownej realizacji</button>
+  </div>
+</div>
+<br />

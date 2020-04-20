@@ -1,0 +1,36 @@
+<div id="container">
+  <h1 class="text-center">Sondaże i głosowania <img src="../../assets/icons/check.svg" height="40px" ></h1>
+  <br />
+
+  <!-- Wylistowania poszczególnych rodzajów ankiet -->
+  <div *ngFor="let survey2 of surveys2 | async" >
+    <app-survey2-details [survey2]='survey2'></app-survey2-details>
+    <br />
+  </div>
+
+  <div *ngFor="let survey3 of surveys3 | async" >
+    <app-survey3-details [survey3]='survey3'></app-survey3-details>
+    <br />
+  </div>
+
+  <div *ngFor="let survey4 of surveys4 | async" >
+    <app-survey4-details [survey4]='survey4'></app-survey4-details>
+    <br />
+  </div>
+
+  <div *ngFor="let survey5 of surveys5 | async" >
+    <app-survey5-details [survey5]='survey5'></app-survey5-details>
+    <br />
+  </div>
+
+  <div *ngFor="let survey6 of surveys6 | async" >
+    <app-survey6-details [survey6]='survey6'></app-survey6-details>
+    <br />
+  </div>
+
+  <div *ngFor="let survey7 of surveys7 | async" >
+    <app-survey7-details [survey7]='survey7'></app-survey7-details>
+    <br />
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+
+<div *ngIf="task" id="task" [hidden]="this.hiddenDiv">
+  <div class="text-center">
+    <h3>{{task.taskTitle}}</h3>
+  </div>
+  <div>
+    <b><div [innerHTML]="task.taskContent"></div></b>
+    <br />
+  </div>
+  <div class="text-left">
+    <b>Status: {{status}} &nbsp;&nbsp;&nbsp; Data rozpoczęcia: {{task.startdate}} &nbsp;&nbsp;&nbsp; Data zakończenia: {{task.enddate}}</b>
+    <br />
+  </div>
+  <br />
+  <div class="text-right">
+    <i>{{task.principal.name}} {{task.principal.surname}}</i>
+  </div>
+  <br />
+
+  <div class="text-center" [hidden]="!task.done">
+    <h4>Raport z wykonanego zadania</h4>
+    <div class="editor">
+      <app-ngx-editor [config]="editorConfig" [spellcheck]="true" [(ngModel)]="this.task.report" name="textEditr" class="e"></app-ngx-editor>
+      <br />
+    </div>
+    <button class="button btn btn-success reportButton" (click)="sendReport()">Zapisz</button>
+  </div>
+
+  <br />
+  <div>
+    <button class="button btn btn-danger" (click)="removeTask()" [disabled]="!this.done">Usuń z listy</button>
+    <button class="button btn btn-primary" (click)="acceptTask()" [disabled]="this.accepted">Przyjmij zadanie</button>
+    <button class="button btn btn-success" (click)="finishTask()" [disabled]="!this.accepted || this.done">Oznacz jako wykonane</button>
+  </div>
+</div>
+<br />

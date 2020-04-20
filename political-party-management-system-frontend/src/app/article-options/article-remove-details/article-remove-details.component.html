@@ -1,0 +1,16 @@
+
+<div *ngIf="article" id="article" [hidden]="this.hiddenDiv">
+  <div class="text-center">
+    <h3>{{article.title}}</h3>
+  </div>
+  <div>
+    <b><div [innerHTML]="article.content"></div></b>
+  </div>
+  <div class="text-right">
+    <i *ngIf="article.author"><b>{{article.author.name}} {{article.author.surname}}</b></i>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-danger" (click)="removeArticle()">Usuń artykuł</button>
+  </div>
+</div>
+<br />

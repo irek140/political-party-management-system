@@ -1,0 +1,11 @@
+
+<div id="articleList">
+  <h1 class="text-center">Artykuły w systemie <img src="../../assets/icons/article.svg" height="40px" ></h1>
+  <br />
+  <div *ngFor="let article of articles | async" >
+    <app-article-remove-details [article]='article'></app-article-remove-details>
+    <br />
+  </div>
+  <br /><br /><br /><br /><br />
+</div>
+<br />

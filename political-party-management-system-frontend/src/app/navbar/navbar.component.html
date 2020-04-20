@@ -1,0 +1,38 @@
+<b>
+<nav class="navbar navbar-expand-lg menu fixed-top " id="navbar" >
+    <span id="set1">
+      <a class="navbar-brand" routerLink="/home">Strona główna</a>
+      <a class="navbar-brand" routerLink="/rejestracja" *ngIf="!loginStatus">Rejestracja</a>
+      <a class="navbar-brand" routerLink="/logowanie" routerLinkActive="active" *ngIf="!loginStatus">Logowanie</a>
+      <a class="navbar-brand" routerLink="/admin-panel" *ngIf="isAdmin">Panel Funkcjonalności</a>
+      <a class="navbar-brand" routerLink="/president-panel" *ngIf="isPresident && !isAdmin && !isVicePresident">Panel Prezesa Partii</a>
+      <a class="navbar-brand" routerLink="/vice-president-panel" *ngIf="isVicePresident && !isPresident && !isAdmin">Panel Wiceprezesa Partii</a>
+      <a class="navbar-brand" routerLink="/secretary-panel" *ngIf="isSecretary && !isPresident">Panel Sekretarza</a>
+      <a class="navbar-brand" routerLink="/region-president-panel" *ngIf="isRegionPresident">Panel Prezesa Regionu</a>
+      <a class="navbar-brand" routerLink="/region-vice-president-panel" *ngIf="isRegionVicePresident && !isPresident && !isAdmin">Panel Wiceprezesa Regionu</a>
+      <a class="navbar-brand" routerLink="/region-secretary-panel" *ngIf="isRegionSecretary">Panel Sekretarza Regionu</a>
+      <a class="navbar-brand" routerLink="/constituency-president-panel" *ngIf="isConstituencyPresident && !isAdmin && !isVicePresident">Panel Prezesa Okręgu</a>
+      <a class="navbar-brand" routerLink="/constituency-vice-president-panel" *ngIf="isConstituencyVicePresident && !isPresident && !isAdmin">Panel Wiceprezesa Okręgu</a>
+      <a class="navbar-brand" routerLink="/constituency-secretary-panel" *ngIf="isConstituencySecretary && !isAdmin && !isVicePresident">Panel Sekretarza Okręgu</a>
+      <a class="navbar-brand" routerLink="/member-panel" *ngIf="isMember && isUser && !isPresident && !isAdmin && !isVicePresident && !isSecretary && !isRegionPresident && !this.isRegionVicePresident && !this.isConstituencyPresident && !this.isConstituencyVicePresident && !this.isRegionSecretary && !this.isConstituencySecretary">Panel Członka Partii</a>
+      <a class="navbar-brand" routerLink="/user-panel" *ngIf="isUser && !isAdmin && !isMember && !isPresident">Panel Użytkownika</a>
+      <a class="navbar-brand" routerLink="/home" *ngIf="loginStatus" (click)="logout()">Wyloguj</a>
+    </span>
+
+    <span id="set2" class="text-right">
+      <span class="personalData" *ngIf="loginStatus"> {{name}} {{surname}} </span>
+      <span *ngIf="loginStatus && isAdmin"> <img src="../../assets/icons/key.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && isPresident"> <img src="../../assets/icons/president.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && isVicePresident"> <img src="../../assets/icons/vice-president.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && (isSecretary || isRegionSecretary || isConstituencySecretary)"> <img src="../../assets/icons/secretary.svg" height="35px"> </span>
+      <span *ngIf="loginStatus && isRegionPresident"> <img src="../../assets/icons/region-president.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && isRegionVicePresident"> <img src="../../assets/icons/region-vice-president.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && isConstituencyPresident"> <img src="../../assets/icons/constituency-president.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && isConstituencyVicePresident"> <img src="../../assets/icons/constituency-vice-president.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && isMember && !isPresident && !isAdmin && !isVicePresident && !isSecretary && !isRegionPresident && !this.isRegionVicePresident && !this.isConstituencyPresident  && !this.isConstituencyVicePresident && !this.isRegionSecretary && !this.isConstituencySecretary"> <img src="../../assets/icons/member.svg" height="40px"> </span>
+      <span *ngIf="loginStatus && isUser && !isMember && !isPresident && !isAdmin && !isVicePresident && !isSecretary && !isRegionPresident && !this.isRegionVicePresident && !this.isConstituencyPresident  && !this.isConstituencyVicePresident && !this.isRegionSecretary && !this.isConstituencySecretary"> <img src="../../assets/icons/user.svg" height="40px"> </span>
+    </span>
+</nav>
+</b>
+
+

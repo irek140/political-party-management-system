@@ -1,0 +1,65 @@
+<div id="all">
+  <div id="articleList">
+  <app-article-list></app-article-list>
+  </div>
+
+  <div id="registerForm" class="text-center">
+    <h3>Rejestracja</h3><br />
+
+    <form ngNativeValidate #registerForm="ngForm">
+      <div style="display: inline-grid">
+        <label for="login">Login: </label>
+        <input type="text" class="form-control" id="login" required [(ngModel)]="user.username" name="login" placeholder="Login" #login="ngModel" minlength="4" maxlength="16">
+        <div *ngIf="!login.valid && login.dirty" class="statement">Pole wymagane!</div>
+        <div *ngIf="login.errors && login.errors['minlength']" class="statement">Login wymaga od 4 do 16 znaków!</div>
+        <br />
+
+        <label for="password">Hasło: </label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password" placeholder="Hasło" #pass1="ngModel" minlength="6" maxlength="16">
+        <div *ngIf="!pass1.valid && pass1.dirty" class="statement">Pole wymagane!</div>
+        <div *ngIf="pass1.errors && pass1.errors['minlength']" class="statement">Hasło wymaga od 6 do 16 znaków!</div>
+        <br />
+
+        <label for="password2">Powtórz hasło: </label>
+        <input type="password" class="form-control" id="password2" required name="password2" placeholder="Powtórz hasło" ngModel #pass2="ngModel" maxlength="16">
+        <div *ngIf="!pass2.valid && pass2.dirty" class="statement">Pole wymagane!</div>
+        <div *ngIf="pass1.value != pass2.value && pass1.dirty && pass2.dirty" class="statement">Hasła muszą być takie same!</div>
+        <br />
+
+        <label for="email">Email: </label>
+        <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email" placeholder="Email" #email="ngModel" email>
+        <div *ngIf="!email.valid && email.dirty" class="statement">Pole wymagane!</div>
+        <div *ngIf="email.errors && email.errors['email'] && email.dirty" class="statement">Zły adres email!</div>
+        <br />
+
+        <label for="name1">Imię: </label>
+        <input type="text" class="form-control" id="name1" required [(ngModel)]="user.name" name="name1" placeholder="Imię" #name1="ngModel" minlength="3" maxlength="20">
+        <div *ngIf="!name1.valid && name1.dirty" class="statement">Pole wymagane!</div>
+        <div *ngIf="name1.errors && name1.errors['minlength']" class="statement">Imię wymaga minimum 3 znaki!</div>
+        <br />
+
+        <label for="surname">Nazwisko: </label>
+        <input type="text" class="form-control" id="surname" required [(ngModel)]="user.surname" name="surname" placeholder="Nazwisko" #surname="ngModel" minlength="2" maxlength="30">
+        <div *ngIf="!surname.valid && surname.dirty" class="statement">Pole wymagane!</div>
+        <div *ngIf="surname.errors && surname.errors['minlength']" class="statement">Nazwisko wymaga minimum 2 znaki!</div>
+        <br />
+
+        <label for="region">Region: </label>
+        <mat-form-field>
+            <mat-select [(ngModel)]="regionName" name="region">
+            <mat-option *ngFor="let region of regions | async" [value]="region.name">
+                {{region.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br /><br />
+        <button type="submit" class="btn btn-success registerButton" (click)="registerUserAccount()" [disabled]="!registerForm.valid">Zarejestruj</button>
+      </div>
+    </form>
+    <br />
+  </div>
+  <br /><br /><br />
+</div>
+
+

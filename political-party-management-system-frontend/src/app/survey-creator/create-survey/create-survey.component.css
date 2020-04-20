@@ -1,0 +1,43 @@
+
+#container {
+  width: 80%;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+  padding-top: 15px;
+  background-attachment: fixed;
+  margin-left:  10%;
+  padding-top: 20px;
+  opacity: 0.95;
+  min-height: 60%;
+}
+
+
+h1,h3 {
+  color: black;
+  opacity: 1;
+}
+
+table {
+color: white;
+width: 80%;
+margin-left: 10%;
+opacity: 1;
+}
+
+tr {
+  height: 70px;
+  width: 100%;
+}
+
+td {
+  background-color: rgba(43, 72, 161, 0.856);
+  width: 5%;
+  height: 70px;
+  padding-top: 15px;
+  color: white;
+  vertical-align: middle;
+}
+
+td:hover {
+  background-color: royalblue;
+}

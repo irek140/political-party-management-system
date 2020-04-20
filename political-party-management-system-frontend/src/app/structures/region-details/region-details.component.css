@@ -1,0 +1,36 @@
+
+#region {
+  background-color: white;
+  background-attachment: fixed;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  margin-left: 10%;
+  opacity: 1;
+}
+
+.updateButton {
+  margin-left: 10%;
+  width: 20%
+}
+
+.input-edit {
+  width: 30%;
+}
+
+.constituencyInput {
+  width: 30%;
+  float: left;
+}
+
+.constituencyButton {
+  width: 20%;
+  margin-left: 10%;
+}
+
+.btn-danger {
+  width: 25%;
+}

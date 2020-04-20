@@ -1,0 +1,20 @@
+
+#container {
+    width: 80%;
+    background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+    border-radius: 10px;
+    background-attachment: fixed;
+    margin-left:  10%;
+    padding-top: 20px;
+    opacity: 0.95;
+    min-height: 64%;
+  }
+
+  h1, h4 {
+    color: black;
+  }
+
+  input {
+    width: 40%;
+    margin-left: 30%;
+  }

@@ -1,0 +1,39 @@
+
+<div *ngIf="survey4" id="survey4" [hidden]="hidden">
+  <div class="text-center">
+    <h5>{{survey4.question}}</h5>
+  </div>
+  <table id="options">
+
+    <tr id="row1">
+      <td id="option1" class="text-center">
+          <button class="btn btn-success op1" (click)="chooseOption1()" >{{survey4.answer1}}</button>
+      </td>
+
+      <td id="option2" class="text-center">
+        <button class="btn btn-success op2" (click)="chooseOption2()" >{{survey4.answer2}}</button>
+      </td>
+    </tr>
+    <br />
+    <tr id="row2">
+      <td id="option3" class="text-center">
+        <button class="btn btn-success op3" (click)="chooseOption3()" >{{survey4.answer3}}</button>
+      </td>
+
+      <td id="option4" class="text-center">
+        <button class="btn btn-success op4" (click)="chooseOption4()" >{{survey4.answer4}}</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="text-center" id="author" >
+    <i *ngIf="survey4.owner"><b>
+      <span>Autor: {{survey4.owner.name}} {{survey4.owner.surname}}</span>
+    </b></i>
+    <br />
+    <i><b>
+      Utworzono: {{survey4.created}} <span *ngIf="survey4.enddate !== null">&nbsp; &nbsp; &nbsp;  &nbsp; Data zakończenia: {{survey4.enddate}}</span>
+    </b></i>
+  </div>
+</div>
+<br />

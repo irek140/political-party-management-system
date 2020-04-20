@@ -1,0 +1,60 @@
+
+<div *ngIf="survey2" id="content1" [hidden]="hidden" >
+  <div class="text-center">
+    <h4 id="content" #content>{{survey2.question}}</h4>
+  </div>
+  <table id="options">
+    <tr>
+      <td id="option1" class="text-center">
+          <b>
+            <h5>Odpowiedź 1:</h5> {{survey2.answer1}}
+            <br />
+            <h6>Oddanych głosów: {{survey2.value1}}</h6>
+          </b>
+      </td>
+
+      <td id="option2" class="text-center">
+        <b>
+          <h5>Odpowiedź 2:</h5> {{survey2.answer2}}
+          <br />
+          <h6>Oddanych głosów: {{survey2.value2}}</h6>
+        </b>
+      </td>
+    </tr>
+  </table>
+
+  <div class="chart" *ngIf="numberOfVotes > 0" >
+    <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="surveyObject"
+    [gradient]="gradient"
+    [legend]="showLegend"
+    [legendPosition]="legendPosition"
+    [labels]="showLabels"
+    [doughnut]="isDoughnut"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+    </ngx-charts-pie-chart>
+  </div>
+  <br />
+  <div class="text-center" id="author" >
+    <i *ngIf="survey2.owner"><b>
+      <span *ngIf="survey2.owner.username !== 'admin'">Autor: {{survey2.owner.name}} {{survey2.owner.surname}}</span>
+      &nbsp; &nbsp; &nbsp;  &nbsp; Utworzono: {{survey2.created}} <span *ngIf="survey2.enddate">&nbsp; &nbsp; &nbsp;  &nbsp; Ważna do: {{survey2.enddate}}</span>
+    </b></i>
+  </div>
+  <br />
+  <div id="buttons">
+    <div id="buttonRemove">
+      <button class="btn btn-danger buttonR" *ngIf='survey2.owner.id === this.id' (click)="deleteSurvey()">Usuń</button>
+    </div>
+    <div id="buttonGenerate">
+      <button class="btn btn-primary buttonG"  (click)="print()" *ngIf='survey2.owner.id === this.id'>Utwórz raport PDF</button>
+    </div>
+    <br /><br /><br />
+  </div>
+</div>
+<br />

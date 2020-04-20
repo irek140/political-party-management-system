@@ -1,0 +1,124 @@
+
+<b>
+<div id="container" >
+
+  <div id="createTask" class="text-center">
+    <h1 class="text-center">Szczegóły zadania</h1>
+    <form #taskForm='ngForm'>
+      <div style="display:inline-grid;" id="f">
+        <label for="title">Tytuł:</label>
+        <input type="text" id="title" name="title" required class="form-control" [(ngModel)]="taskTitle">
+
+        <label for="content">Założenia:</label>
+        <div class="editor">
+          <app-ngx-editor [config]="editorConfig" [spellcheck]="true" [(ngModel)]="this.taskContent" name="textEditr" class="e"></app-ngx-editor>
+        </div>
+        <br />
+        <div>
+          <span>
+            <mat-form-field id="calendar">
+              <input matInput [matDatepicker]="picker" placeholder="Data rozpoczęcia" [(ngModel)]="startdate" name="cal1"  [min]="minDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </span>
+          <span>
+            <mat-form-field id="calendar2">
+              <input matInput [matDatepicker]="picker2" placeholder="Data zakończenia" [(ngModel)]="enddate" name="cal2"  [min]="startdate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </span>
+        </div>
+
+        <button class="btn btn-success" (click)='assignTask()' [disabled]="!taskForm.valid || addresses.length < 1">Przydziel zadanie</button>
+      </div>
+    </form>
+    <br /><br />
+  </div>
+
+  <div id="selectAddressees">
+    <h2 class="text-center">Zleceniobiorcy</h2>
+
+    <div>
+        <label class="searchLabel">Wyszukaj po loginie</label>
+        <form class="searchForm">
+          <div class="form-group searchRecord">
+            <input type="text" class="form-control in" id="username" required [(ngModel)]="username" name="username">
+          </div>
+            <button class="btn btn-success button1" (click)="searchUserByUsernameWithoutAdmin()">Wyszukaj</button>
+        </form>
+    </div>
+
+    <div>
+      <label class="searchLabel">Wyszukaj po adresie email</label>
+      <form class="searchForm">
+        <div class="form-group searchRecord">
+          <input type="text" class="form-control in" id="email" required [(ngModel)]="email" name="email">
+        </div>
+          <button class="btn btn-success button1" (click)="searchUserByEmail()">Wyszukaj</button>
+      </form>
+    </div>
+
+    <div>
+      <label class="searchLabel">Wyszukaj po imieniu</label>
+      <form class="searchForm">
+        <div class="form-group searchRecord">
+          <input type="text" class="form-control in" id="name" required [(ngModel)]="name" name="name">
+        </div>
+          <button class="btn btn-success button1" (click)="searchUserByName()">Wyszukaj</button>
+      </form>
+    </div>
+
+    <div>
+      <label class="searchLabel">Wyszukaj po nazwisku</label>
+      <form class="searchForm">
+        <div class="form-group searchRecord">
+          <input type="text" class="form-control in" id="surname" required [(ngModel)]="surname" name="surname">
+        </div>
+          <button class="btn btn-success button1" (click)="searchUserBySurname()">Wyszukaj</button>
+      </form>
+    </div>
+
+    <div>
+      <label class="searchLabel">Wyszukaj po regionie</label>
+      <form class="searchForm">
+        <div class="form-group searchRecord">
+          <mat-form-field id="selectRegion">
+            <mat-label>Region</mat-label>
+              <mat-select [(ngModel)]="region" name="newRegion">
+                <mat-option *ngFor="let region of regions | async" [value]="region.name">
+                  {{region.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+        <button class="btn btn-success button1" (click)="searchUserByRegion()">Wyszukaj</button>
+      </form>
+    </div>
+
+    <span *ngIf="user || users.length > 0">
+      <br />
+      <h3 class="text-center">Lista wyników wyszukiwania:</h3>
+    </span>
+      <span *ngFor="let user of users">
+          <h6 class="userItem"><b>Login: {{user.username}}  &nbsp;&nbsp;|&nbsp;&nbsp;  Imię: {{user.name}}  &nbsp;&nbsp;|&nbsp;&nbsp; Nazwisko: {{user.surname}}</b></h6> <button class="btn btn-success button-add" (click)="addAddresses(user)">Dodaj zleceniobiorcę</button><br /><br />
+      </span>
+      <span *ngIf="user">
+          <h6 class="userItem"><b>Login: {{user.username}}  &nbsp;&nbsp;|&nbsp;&nbsp;  Imię: {{user.name}}  &nbsp;&nbsp;|&nbsp;&nbsp;  Nazwisko: {{user.surname}}</b></h6> <button class="btn btn-success button-add" (click)="addAddresses(user)">Dodaj zleceniobiorcę</button><br /><br />
+      </span>
+      <br />
+      <h3 class="text-center">Lista zleceniobiorców ({{addresses.length}}):</h3><br />
+      <span *ngIf="addresses.length > 0">
+          <span *ngFor="let user of addresses">
+              <h6 class="userItem"><b>Login: {{user.username}}  &nbsp;&nbsp;|&nbsp;&nbsp;  Imię: {{user.name}}  &nbsp;&nbsp;|&nbsp;&nbsp;  Nazwisko: {{user.surname}}</b></h6> <button class="btn btn-danger button-remove" (click)="removeAddresses(user)">Usuń zleceniobiorcę</button><br /><br />
+          </span>
+      </span>
+
+  </div>
+
+  <br />
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</b>

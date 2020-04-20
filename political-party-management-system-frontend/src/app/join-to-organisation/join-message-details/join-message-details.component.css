@@ -1,0 +1,32 @@
+
+#joinMessage {
+  background-color: white;
+  background-attachment: fixed;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+p {
+  max-width: 700px;
+  word-wrap: break-word;
+  padding: 1%;
+}
+
+i {
+  padding: 1%;
+}
+
+.buttonAccept {
+  margin-left: 30%;
+  float: left;
+}
+
+.buttonRemove {
+  margin-left: 20%;
+  float: left;
+}

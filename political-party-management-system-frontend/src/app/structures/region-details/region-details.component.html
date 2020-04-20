@@ -1,0 +1,37 @@
+<b>
+  <div *ngIf="region" id="region" [hidden]="hidden">
+    <div>
+      <h3 class="text-center">Region: {{region.name}}</h3>
+    </div>
+    <div>
+      <form>
+        <mat-form-field class="input-edit">
+          <input matInput type="text" class="form-control " id="regionName" [(ngModel)]="region.name" name="region-name" placeholder="Nazwa" value="{{region.name}}">
+        </mat-form-field>
+        <button class="btn btn-success updateButton" (click)="updateRegion()">Aktualizuj</button>
+      </form>
+    </div>
+    <br />
+    <div>
+      <h5>Nowy okręg</h5>
+      <form #constituencyForm='ngForm'>
+        <input type="text" class="form-control constituencyInput" id="constituency" required [(ngModel)]="constituency" name="constituency">
+        <button class="btn btn-success constituencyButton" [disabled]="!constituencyForm.valid" (click)="addConstituency()" >Dodaj</button>
+      </form>
+    </div>
+    <br />
+    <div class="text-left">
+      <h5>Lista okręgów:</h5>
+      <div *ngFor="let con of constituencyList | async" >
+        <app-constituency-details [con]='con'></app-constituency-details>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-danger" (click)="deleteRegion()">Usuń region</button>
+      <br />
+    </div>
+    <br />
+  </div>
+  <br />
+</b>

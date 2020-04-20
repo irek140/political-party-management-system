@@ -1,0 +1,171 @@
+#container {
+  width: 80%;
+  background-attachment: fixed;
+  margin-left:  10%;
+  opacity: 0.95;
+}
+
+#calendar {
+  width: 45%;
+  background: white;
+  border-radius: 10px;
+  height: 75px;
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#calendar2 {
+  width: 45%;
+  margin-left: 5%;
+  background: white;
+  border-radius: 10px;
+  height: 75px;
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.editor {
+  background-color: white;
+  border-radius: 10px;
+}
+
+#createTask {
+  padding-top: 15px;
+  width: 45%;
+  float: left;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+}
+
+#selectAddressees {
+  padding-top: 15px;
+  width: 50%;
+  margin-left: 5%;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+  float: left;
+}
+
+#selectRegion {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  width: 65%;
+  height: 55px;
+  padding: 5px;
+  font-size: 15px;
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  opacity: 1;
+}
+
+label {
+  color: black;
+  opacity: 1;
+  font-size: x-large;
+  margin-top: 10px;
+}
+
+button {
+  opacity: 1;
+  margin-top: 40px;
+  margin-left: 30%;
+  width: 40%;
+}
+
+input {
+  margin-top: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+  color: black;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 5px;
+  color: black;
+}
+
+form {
+  width: 80%;
+  margin-left: 10%;
+}
+
+#f {
+  width: 100%;
+}
+
+.button1 {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  margin-left: 5%;
+  width: 30%;
+}
+
+.in {
+  width: 65%;
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.button-add {
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 5px;
+  background: darkorange;
+  border-color: yellow;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  color: white;
+  opacity: 1;
+}
+
+.button-remove {
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 5px;
+  background: darkred;
+}
+
+.searchLabel {
+  margin-bottom: 0px;
+  margin-left: 10%;
+}
+
+.searchRecord {
+  margin-top: 0px;
+}
+
+.searchForm {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.userItem {
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: black;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 10px;
+}
+
+

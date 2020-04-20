@@ -1,0 +1,11 @@
+
+<div id="taskList">
+  <h1 class="text-center">Moje Rozdysponowane Zadania <img src="../../assets/icons/my-tasks.svg" height="40px" ></h1>
+  <br />
+  <div *ngFor="let task of tasks | async" >
+    <app-task-sent-details [task]='task'></app-task-sent-details>
+    <br /><br />
+  </div>
+  <br /><br />
+</div>
+<br />

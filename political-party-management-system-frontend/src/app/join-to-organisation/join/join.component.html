@@ -1,0 +1,14 @@
+<div id="container" class="text-center">
+  <h1 class="text-center">Prośba o członkostwo</h1>
+
+  <form #joinForm='ngForm'>
+    <div style="display:inline-grid;" id="f">
+
+      <label for="content">Umotywuj swoją prośbę</label>
+      <textarea id="content" name="content" required class="form-control" [(ngModel)]='contentMessage'></textarea>
+
+      <button class="btn btn-success" (click)='join()' [disabled]="!joinForm.valid || hasJoinMessage">Aplikuj</button>
+    </div>
+  </form>
+  <br />
+</div>

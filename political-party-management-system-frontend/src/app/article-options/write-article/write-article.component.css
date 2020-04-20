@@ -1,0 +1,70 @@
+
+#container {
+  width: 80%;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+  padding-top: 15px;
+  background-attachment: fixed;
+  margin-left:  10%;
+  padding-top: 20px;
+  opacity: 0.97;
+}
+
+h1 {
+  color: black;
+  opacity: 1;
+}
+
+label {
+  color: black;
+  opacity: 1;
+  font-size: x-large;
+  margin-top: 10px;
+}
+
+button {
+  opacity: 1;
+  margin-top: 40px;
+  width: 30%;
+}
+
+input {
+  margin-top: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+  color: black;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  margin-top: 5px;
+  color: black;
+}
+
+form {
+  width: 80%;
+  margin-left: 10%;
+}
+
+#f {
+  width: 100%;
+}
+
+.editor {
+  background-color: white;
+  border-radius: 10px;
+}
+
+#createArticle {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.e {
+  border-radius: 10px;
+}
+
+.publishButton {
+  height: 50px;
+}

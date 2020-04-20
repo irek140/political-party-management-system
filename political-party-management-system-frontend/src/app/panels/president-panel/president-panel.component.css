@@ -1,0 +1,45 @@
+
+#container {
+  width: 80%;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+  padding-top: 15px;
+  background-attachment: fixed;
+  margin-left:  10%;
+  padding-top: 20px;
+  opacity: 0.9;
+  min-height: 72%;
+}
+
+
+h1 {
+  color: black;
+  opacity: 1;
+}
+
+#options {
+  width: 100%;
+}
+
+#option1 {
+  opacity: 1;
+  width: 50%;
+  float: left;
+}
+
+#option2 {
+  opacity: 1;
+  width: 50%;
+  float: left;
+}
+
+button {
+  width: 300px;
+  height: 45px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: cornflowerblue;
+}

@@ -1,0 +1,85 @@
+
+<div *ngIf="survey5" id="survey5" [hidden]="hidden">
+  <div class="text-center">
+    <h4>{{survey5.question}}</h4>
+  </div>
+  <table id="options">
+
+    <tr id="option1" class="text-center">
+      <b>
+        <h5>Odpowiedź 1:</h5> {{survey5.answer1}}
+        <br />
+        <h6>Oddanych głosów: {{survey5.value1}}</h6>
+      </b>
+    </tr>
+    <br />
+    <tr id="option2" class="text-center">
+      <b>
+        <h5>Odpowiedź 2:</h5> {{survey5.answer2}}
+        <br />
+        <h6>Oddanych głosów: {{survey5.value2}}</h6>
+      </b>
+    </tr>
+    <br />
+    <tr id="option3" class="text-center">
+      <b>
+        <h5>Odpowiedź 3:</h5> {{survey5.answer3}}
+        <br />
+        <h6>Oddanych głosów: {{survey5.value3}}</h6>
+      </b>
+    </tr>
+    <br />
+    <tr id="option4" class="text-center">
+      <b>
+        <h5>Odpowiedź 4:</h5> {{survey5.answer4}}
+        <br />
+        <h6>Oddanych głosów: {{survey5.value4}}</h6>
+      </b>
+    </tr>
+    <br />
+    <tr id="option5" class="text-center">
+      <b>
+        <h5>Odpowiedź 5:</h5> {{survey5.answer5}}
+        <br />
+        <h6>Oddanych głosów: {{survey5.value5}}</h6>
+      </b>
+    </tr>
+
+  </table>
+
+    <div class="chart" *ngIf="numberOfVotes > 0">
+      <ngx-charts-pie-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="surveyObject"
+      [gradient]="gradient"
+      [legend]="showLegend"
+      [legendPosition]="legendPosition"
+      [labels]="showLabels"
+      [doughnut]="isDoughnut"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+      >
+      </ngx-charts-pie-chart>
+    </div>
+    <br />
+
+  <div class="text-center" id="author" >
+    <i *ngIf="survey5.owner"><b>
+      <span *ngIf="survey5.owner.username !== 'admin'">Autor: {{survey5.owner.name}} {{survey5.owner.surname}}</span>
+      &nbsp; &nbsp; &nbsp;  &nbsp; Utworzono: {{survey5.created}}
+    </b></i>
+  </div>
+  <br />
+  <div id="buttons">
+    <div id="buttonRemove">
+      <button class="btn btn-danger buttonR" *ngIf='survey5.owner.id === this.id' (click)="deleteSurvey()">Usuń</button>
+    </div>
+    <div id="buttonGenerate">
+      <button class="btn btn-primary buttonG"  (click)="print()" *ngIf='survey5.owner.id === this.id'>Utwórz raport PDF</button>
+    </div>
+    <br /><br />
+  </div>
+</div>
+<br />

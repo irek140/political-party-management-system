@@ -1,0 +1,64 @@
+<b>
+<div id="container" style="display:inline-grid;">
+  <h1 class="text-center">Kreator sondaży i głosowań <img src="../../assets/icons/create-survey.svg" height="40px" ></h1>
+  <br />
+  <form class="form" #surveyForm='ngForm'>
+    <div class="form-group searchRecord">
+      <h4>Pytanie</h4>
+      <input type="text" class="form-control" id="question" required [(ngModel)]="question" name="question">
+    </div>
+    <div class="form-group searchRecord">
+      <h4>Odpowiedź nr 1</h4>
+      <input type="text" class="form-control" id="answer1" required [(ngModel)]="answer1" name="answer1">
+    </div>
+    <div class="form-group searchRecord">
+      <h4>Odpowiedź nr 2</h4>
+      <input type="text" class="form-control" id="answer2" required [(ngModel)]="answer2" name="answer2">
+    </div>
+
+    <div class="form-group" id="columns">
+      <div id="col1">
+        <h4>Region (pole nieobowiązkowe)</h4>
+        <mat-form-field>
+          <mat-label>Region</mat-label>
+            <mat-select [(ngModel)]="region" name="newRegion">
+              <mat-option *ngFor="let region of regions | async" [value]="region.name">
+                {{region.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+
+      <div id="col2" *ngIf="region.length > 0">
+        <h4 >Okręg (pole nieobowiązkowe)</h4>
+        <mat-form-field >
+          <mat-label>Okręg</mat-label>
+          <mat-select [(ngModel)]="constituency" name="constituency" >
+            <ng-container *ngFor="let constituency of allConstituencies | async">
+              <mat-option *ngIf="constituency.parent === region" [value]="constituency.name" >
+                {{constituency.name}}
+              </mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <br />
+
+      <mat-form-field id="calendar">
+        <input matInput [matDatepicker]="picker" placeholder="Wybierz datę zakończenia" [(ngModel)]="enddate" name="cal"  [min]="minDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+  </form>
+  <br />
+  <div class="text-center">
+    <mat-checkbox [(ngModel)]="onlyForMembers">Tylko dla członków partii</mat-checkbox>
+  </div>
+  <br />
+  <button class="btn btn-success buttonPublish" (click)="publishSurvey()" [disabled]="!surveyForm.valid">Opublikuj</button>
+  <br /><br /><br /><br /><br />
+</div>
+<br />
+</b>

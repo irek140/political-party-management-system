@@ -1,0 +1,89 @@
+
+#survey7 {
+  background-color: white;
+  background-attachment: fixed;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+p {
+  max-width: 700px;
+  word-wrap: break-word;
+}
+
+.chart {
+  margin-left: 10%;
+}
+
+#options {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.op1 {
+  width: 90%;
+  padding: 10px;
+}
+
+.op2 {
+  width: 90%;
+  padding: 10px;
+}
+
+.op3 {
+  width: 90%;
+  padding: 10px;
+}
+
+.op4 {
+  width: 90%;
+  padding: 10px;
+}
+
+.op5 {
+  width: 90%;
+  padding: 10px;
+}
+
+.op6 {
+  width: 90%;
+  padding: 10px;
+}
+
+.op7 {
+  width: 90%;
+  padding: 10px;
+}
+
+#author {
+  margin-top: 20px;
+}
+
+#buttons {
+  width: 100%;
+}
+
+#buttonRemove {
+  width: 50%;
+  float: left;
+  padding-left: 15%;
+}
+
+#buttonGenerate {
+  width: 50%;
+  float: left;
+  padding-left: 15%;
+}
+
+.buttonR {
+  width: 60%;
+}
+
+.buttonG {
+  width: 60%;
+}

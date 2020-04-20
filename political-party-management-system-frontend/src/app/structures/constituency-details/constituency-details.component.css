@@ -1,0 +1,43 @@
+
+#con {
+  background-color: white;
+  background-attachment: fixed;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+button {
+  margin-left: 20px;
+  font-size: smaller;
+  height: 35px;
+  width: 20%;
+}
+
+#name {
+  margin-left: 4px;
+  display: inline;
+}
+
+.example-full-width {
+  margin-left: 20px;
+}
+
+#con {
+  background-color: lightgrey;
+}
+
+.btn-danger {
+  margin-left: 40%;
+}
+
+#regionEdit {
+  margin-left: 30%;
+  width: 25%
+}
+
+#constituencyNameEdit {
+  width: 25%
+}

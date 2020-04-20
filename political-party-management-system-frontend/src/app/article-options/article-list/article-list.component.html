@@ -1,0 +1,12 @@
+
+<div id="articleList">
+  <h1 class="text-center">Artykuły</h1>
+  <br />
+  <div *ngFor="let article of articles | async" >
+    <app-article-details [article]='article'></app-article-details>
+    <br />
+  </div>
+  <br /><br /><br /><br /><br />
+</div>
+<br />
+

@@ -1,0 +1,27 @@
+<div id="all" >
+  <div id="articleList">
+   <app-article-list></app-article-list>
+  </div>
+
+  <div id="loginForm" class="text-center">
+    <h3>Zaloguj się do aplikacji</h3><br />
+
+    <form ngNativeValidate #loginForm="ngForm">
+      <div style="display: inline-grid">
+        <label for="login">Login: </label>
+        <input type="text" class="form-control" id="login" required [(ngModel)]="user.username" name="login" placeholder="Login" #login="ngModel" maxlength="16">
+        <div *ngIf="!login.valid && login.dirty" class="statement">Pole wymagane!</div>
+        <br />
+        <label for="password">Hasło: </label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password" placeholder="Hasło" #pass="ngModel" maxlength="16">
+        <div *ngIf="!pass.valid && pass.dirty" class="statement">Pole wymagane!</div>
+        <br />
+        <button type="submit" class="btn btn-success loginButton" (click)="loginUser()" [disabled]="!loginForm.valid">Zaloguj</button>
+      </div>
+    </form>
+    <br />
+  </div>
+</div>
+
+
+

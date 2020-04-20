@@ -1,0 +1,19 @@
+
+#container {
+  width: 80%;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+  padding-top: 20px;
+  background-attachment: fixed;
+  margin-left:  10%;
+  padding-top: 20px;
+  opacity: 0.8;
+  min-height: 64%;
+}
+
+
+h1 {
+  color: black;
+  opacity: 1;
+  padding-top: 20px;
+}

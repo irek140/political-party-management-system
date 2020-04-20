@@ -1,0 +1,14 @@
+
+h1 {
+  color: black;
+}
+
+#articleList {
+  width: 80%;
+  margin-left: 10%;
+  background-image: linear-gradient(  darkgrey, rgba(43, 72, 161, 0.856));
+  border-radius: 10px;
+  background-attachment: fixed;
+  padding-top: 20px;
+  min-height: 64%;
+}

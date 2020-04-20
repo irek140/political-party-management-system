@@ -1,0 +1,45 @@
+
+#survey2 {
+  background-color: white;
+  background-attachment: fixed;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+p {
+  max-width: 700px;
+  word-wrap: break-word;
+}
+
+#options {
+  width: 100%;
+  padding-top: 20px;
+}
+
+#option1 {
+  width: 50%;
+  float: left;
+}
+#option2 {
+  width: 50%;
+  float: left;
+}
+
+.op1 {
+  width: 90%;
+  padding: 10px;
+}
+
+.op2 {
+  width: 90%;
+  padding: 10px;
+}
+
+#author {
+  margin-top: 40px;
+}

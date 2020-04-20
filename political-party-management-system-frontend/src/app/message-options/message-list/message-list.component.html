@@ -1,0 +1,11 @@
+
+<div id="messageList">
+    <h1 class="text-center">Moje wiadomości <img src="../../assets/icons/messages.svg" height="40px" ></h1>
+    <br />
+    <div *ngFor="let message of messages | async" >
+      <app-message-details [message]='message'></app-message-details>
+      <br />
+    </div>
+    <br /><br /><br /><br />
+  </div>
+  <br />
